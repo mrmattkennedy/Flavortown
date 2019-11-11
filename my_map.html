@@ -4,7 +4,11 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <title>Google Maps - pygmaps </title>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-riBWDqa4oOwr2xm8o295zqyzQ18_aFk"
+  type="text/javascript"></script>
 <script type="text/javascript">
+	var global_map;
+	var infowindow = null;
 	function initialize() {
 		var centerlatlng = new google.maps.LatLng(37.090240, -95.712891);
 		var myOptions = {
@@ -13,20 +17,690 @@
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-		var latlng = new google.maps.LatLng(37.770776, -122.461689);
+		global_map = map;
+		var latlng = new google.maps.LatLng(40.725661, -73.984082);
 		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
 		var marker = new google.maps.Marker({
-		title: "no implementation",
+		title: "Cienfuegos",
 		icon: img,
+		animation: google.maps.Animation.DROP,
 		position: latlng
 		});
 		marker.setMap(map);
+		marker.addListener('click', this.get_title);
 
+		var latlng = new google.maps.LatLng(40.745152, -73.992778);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Tre Dici",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(40.754080, -73.991586);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "El Sabroso Restaurant",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(40.731260, -74.002813);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Sugar Plumm",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(45.559377, -122.654849);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Grilled Cheese Grill",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(45.521376, -122.985308);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "The Fried Onion",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(45.523395, -122.658372);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Burnside Brewing Co",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(45.522067, -122.681875);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Kenny and Zukes",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(30.247365, -97.750116);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "The Mighty Cone",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(30.266397, -97.737702);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Casino El Camino",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(30.268172, -97.741042);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Firehouse Lounge",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(30.266901, -97.744323);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Frank",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(39.932214, -75.147458);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Federal Donuts",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(39.966860, -75.139260);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "PYT",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(39.949557, -75.146008);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "National Mechanics",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(39.952676, -75.173802);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "The Ranstead Room",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(43.040573, -87.910244);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Safe House Nightclub",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(43.044164, -87.914277);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Wisconsin Cheese Mart",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(43.053959, -87.891572);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Ardent",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(43.040498, -87.905315);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Shah Jee",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(42.352960, -71.133063);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Al's Deli",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(42.342435, -71.054582);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "KO Pies",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(42.362594, -71.113804);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Alive and Kicking",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(42.355230, -71.062336);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Bogies Place",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(33.747060, -84.378970);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Daddy Dz BBQ",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(33.787968, -84.325978);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Bad Dog Taqueria",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(33.768862, -84.361627);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Two Urban Licks",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(33.785168, -84.412003);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Yeah Burger",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(36.201783, -86.739707);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Pepperfire",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(36.158285, -86.767757);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Pinewood Social",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(36.141960, -86.771468);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Gabby's Burgers and Fries",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(36.150776, -86.802206);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Masons",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(29.962381, -90.042676);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Pizza Delicious",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(29.946315, -90.112910);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Bayou Hot Wings",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(29.945822, -90.134969);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "McClures BBQ",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(40.707543, -74.013464);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Wogies",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(40.734666, -73.988767);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Little Town",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(40.781766, -73.948450);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Manny's on Second",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(29.973619, -90.090207);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Parkway Bakery",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(40.751699, -73.972275);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Overlook",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(21.311443, -157.863649);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "The Pig and The Lady",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(21.310977, -157.860477);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "J. J. Dolans",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(21.284313, -157.802628);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Town",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(21.378717, -157.929728);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "The Alley Restaurant at Aiea Bowl",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(37.777721, -122.422990);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Boxing Room",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(37.761562, -122.425882);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Namu Gaji",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(37.778825, -122.394029);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Little Skillet",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(37.764075, -122.432583);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Starbelly",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(36.143845, -115.219159);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Capo's",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(36.169269, -115.140164);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Park on Fremont",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(36.160019, -115.244977);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Jamms Restaurant",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(36.109946, -115.175391);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Cosmopolitan",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(34.059003, -118.418866);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Greenspan's Grilled Cheese",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(34.077924, -118.130369);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Cha Cha Chili",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(41.917181, -87.707216);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Scofflaw",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(41.895973, -87.684256);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Fatso's Last Stand",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(41.895977, -87.681414);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "A Tavola",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(41.886987, -87.651970);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "La Sirena Clandestina",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+
+		var latlng = new google.maps.LatLng(34.098231, -118.321873);
+		var img = new google.maps.MarkerImage('C:\\Users\\mkennedy2\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\gmplot\\markers\\6495ED.png');
+		var marker = new google.maps.Marker({
+		title: "Jitlada",
+		icon: img,
+		animation: google.maps.Animation.DROP,
+		position: latlng
+		});
+		marker.setMap(map);
+		marker.addListener('click', this.get_title);
+		
+		document.getElementById('checkboxes').innerHTML += 
+		'<input type="checkbox" checked="checked" onclick="checkboxChanged(' + 0 + ', this.checked);"> ' + 'spaghed' + '<br>';
+
+	}
+	
+	function get_title(evt)
+	{
+		if (infowindow)
+		{
+			infowindow.close();
+		}
+		else
+		{
+			infowindow = new google.maps.InfoWindow();
+		}
+		infowindow.setContent(this.getTitle());
+		infowindow.open(global_map,this);
 	}
 </script>
 </head>
 <body style="margin:0px; padding:0px;" onload="initialize()">
-	<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+	<div id="checkboxes">
+	<input type="checkbox" name="vehicle" value="Bike"> I have a bike
+		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
+		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
+		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
+		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
+		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
+	</div>
+	
+	<div id="map_canvas" style="width: 100%; height: 100%;">
+		
+	
+	</div>
+	
 </body>
 </html>
