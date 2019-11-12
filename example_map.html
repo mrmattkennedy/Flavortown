@@ -6,6 +6,49 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-riBWDqa4oOwr2xm8o295zqyzQ18_aFk"
   type="text/javascript"></script>
+ <style>
+ @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+ * {
+  box-sizing: border-box;
+}
+@mixin other( $width, $color, $bgcolor ) {
+  box-shadow:
+    4*$width 0 $bgcolor, 
+    -4*$width 0 $bgcolor, 
+    0 (-4*$width) $bgcolor, 
+    0 4*$width $bgcolor,
+    $width 0 0 2*$width $bgcolor,
+    -$width 0 0 2*$width $bgcolor,
+    0 (-$width) 0 2*$width $bgcolor,
+    0 $width 0 2*$width $bgcolor,
+    5*$width 0 $color, 
+    -5*$width 0 $color,
+    0 (-5*$width) $color, 
+    0 5*$width $color,
+    0 0 0 3*$width $color,
+    0 2*$width 0 2*$width $color,
+    0 (-2*$width) 0 2*$width $color,
+    2*$width 0 0 2*$width $color,
+    (-2*$width) 0 0 2*$width $color;
+    margin: 5*$width auto;
+}
+ 
+ #floating-panel {
+  @include other( 4px, orange, white );
+  position: absolute; 
+  top: 10%; 
+  left: 2%; 
+  direction: ltr;
+  overflow: auto;
+  width: 15%;
+  height: 60%;
+}
+
+input[type=checkbox] {
+	direction: ltr;
+	height: 16px;
+}
+</style>
 <script type="text/javascript">
 	var global_map;
 	var infowindow = null;
@@ -688,18 +731,35 @@
 </script>
 </head>
 <body style="margin:0px; padding:0px;" onload="initialize()">
-	<div id="checkboxes">
-	<input type="checkbox" name="vehicle" value="Bike"> I have a bike
-		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
-		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
-		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
-		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
-		<input type="checkbox" name="vehicle" value="Bike"> I have a bike
-	</div>
-	
-	<div id="map_canvas" style="width: 100%; height: 100%;">
-		
-	
+	<div id="wrapper">
+		<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+		<div id="floating-panel">
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bikeI have a bikeI have a bikeI have a bikeI have a bikeI have a bikeI have a bikeI have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+			<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br><br>
+		</div>
 	</div>
 	
 </body>
