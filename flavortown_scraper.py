@@ -19,7 +19,7 @@ def get_addresses():
 
     #Append the rest of the link to the shows
     show_names = [show[len('/show/'):].replace('-', ' ') for show in shows]
-    print(show_names)
+    #print(show_names)
     shows = ["https://www.tvfoodmaps.com" + show + "/all" for show in shows]
 
     #Get all addresses listed in all shows
@@ -55,6 +55,8 @@ def get_addresses():
     for address_list in addresses:
         for address in address_list:
             if address[0].startswith(' ') and not address[0][1].isdigit():
+                address_list.remove(address)
+            if 'Mobile' in address[0]:
                 address_list.remove(address)
     
     return addresses
