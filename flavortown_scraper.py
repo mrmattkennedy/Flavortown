@@ -56,10 +56,11 @@ def get_addresses():
         for address in address_list:
             if address[0].startswith(' ') and not address[0][1].isdigit():
                 address_list.remove(address)
-            if 'Mobile' in address[0]:
+            if address[0].startswith('Mobile'):
                 address_list.remove(address)
-    
-    return addresses
+
+    shows = [show[len('https://www.tvfoodmaps.com/show/'):len(show) - len('/all')].replace('-', ' ') for show in shows]
+    return addresses, shows
 
 #temp = get_addresses()
 
