@@ -107,8 +107,8 @@ progress::-webkit-progress-value {
 
 .switch-label {
 	position: relative;
-	top: 4%;
-	left: 5%
+	top: 2.5%;
+	left: 6%
 	font-family: "Arial";
 	font-size: 20px;
 }
@@ -117,8 +117,8 @@ progress::-webkit-progress-value {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 50px;
+  height: 25px;
 }
 
 /* Hide default HTML checkbox */
@@ -144,8 +144,8 @@ progress::-webkit-progress-value {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 18px;
+  width: 18px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -169,14 +169,14 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(21.3px);
+  -ms-transform: translateX(21.3px);
+  transform: translateX(23px);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 28.333px;
 }
 
 .slider.round:before {
@@ -258,6 +258,44 @@ input:checked + .slider:before {
 			style2.innerHTML = '#two:focus + .slider { box-shadow: 0 0 1px #0000FF; }';
 		document.getElementsByTagName('head')[0].appendChild(style);
 		document.getElementsByTagName('head')[0].appendChild(style2);
+		
+		
+		var label2 = document.createElement('label');
+			label2.setAttribute('class', 'switch');
+		var input = document.createElement('input');
+			input.setAttribute('type', 'checkbox');
+			input.setAttribute('id', 'slider3');
+		var span = document.createElement('span');
+			span.setAttribute('class', 'slider round');
+		var label3 = document.createElement('label');
+			label3.setAttribute('class', 'switch-label');
+			label3.innerHTML = 'abc';
+			
+		/*<label class="switch-label">hi</label><br><br>*/
+			
+		label2.appendChild(input);
+		label2.appendChild(span);
+		div.appendChild(label2);
+		div.append(label3);
+		div.appendChild(document.createElement('br'));
+		div.appendChild(document.createElement('br'));
+		
+		var style3 = document.createElement('label');
+			style3.type = 'text/css';
+			style3.innerHTML = '#slider3:checked + .slider { background-color: #0000FF; }';
+		var style4 = document.createElement('style');
+			style4.type = 'text/css';
+			style4.innerHTML = '#slider3:focus + .slider { box-shadow: 0 0 1px #0000FF; }';
+		
+		
+		document.getElementsByTagName('head')[0].appendChild(style3);
+		document.getElementsByTagName('head')[0].appendChild(style4);
+		/*
+		<label class="switch">
+			  <input type="checkbox" id="two">
+			  <span class="slider round"></span>
+			</label>
+			*/
 		//div.appendChild(label);
 	}
 	
@@ -968,7 +1006,7 @@ input:checked + .slider:before {
 			  <input type="checkbox" id="two">
 			  <span class="slider round"></span>
 			</label>
-			<label class="switch-label">hi</label>
+			<label class="switch-label">hi</label><br><br>
 		</div>
 		<progress color="#8ccc62" max="100" value="0" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" tabindex="-1" id="load-bar"></progress>
 	</div>

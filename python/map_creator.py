@@ -21,13 +21,12 @@ if not os.path.isdir(marker_path):
     print("Can't find path to markers")
 
 every_other_marker = ['#' + color[:-4] for color in os.listdir(marker_path)[::2]]
-   
+
 # Place map
 gmap = gmplot.GoogleMapPlotter(37.09024, -95.712891, 4, apikey=key)
 address_list, shows = flavortown_scraper.get_addresses()
 
 color_index = 0;
-print('here')
 for show_index in range(len(address_list)):
     for address in address_list[show_index]:
         try:
