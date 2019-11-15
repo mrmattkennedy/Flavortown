@@ -6,6 +6,6 @@ I did some scraping off each show's page, and now there are over 6,000 markers o
 
 ## Requirements
 [gmplot](https://pypi.org/project/gmplot/)
-I have attached a copy of my own gmplot file that has a few changes. The only change that is required is the change in pathing for *self.coloricon*.
-[lxml](https://lxml.de/installation.html)
-[BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
+I have attached a copy of my own gmplot file that has a few changes. The only change that is required is the change in pathing for *self.coloricon*.<br>
+[lxml](https://lxml.de/installation.html)<br>
+[BeautifulSoup](https://pypi.org/project/beautifulsoup4/)<br>
