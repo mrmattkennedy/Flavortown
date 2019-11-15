@@ -9,3 +9,4 @@ I did some scraping off each show's page, and now there are over 6,000 markers o
 I have attached a copy of my own gmplot file that has a few changes. The only change that is required is the change in pathing for *self.coloricon*.<br>
 [lxml](https://lxml.de/installation.html)<br>
 [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)<br>
+[requests](https://pypi.org/project/requests/)<br>
