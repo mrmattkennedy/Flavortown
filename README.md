@@ -10,3 +10,7 @@ I have attached a copy of my own gmplot file that has a few changes. The only ch
 [lxml](https://lxml.de/installation.html)<br>
 [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)<br>
 [requests](https://pypi.org/project/requests/)<br>
+
+## Current project state
+I wasn't lying about the 6,000 markers.
+![Image of Idea](https://github.com/mrmattkennedy/Flavortown/blob/master/example.png)
